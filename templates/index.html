@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Regex Tester</title>
+</head>
+<body>
+    <form action="\test", method="POST">
+        <h1>Live Regex Tester</h1>
+        <hr>
+        <label for="regex">Enter Regex String: </label>
+        <input type="text" placeholder="Enter Regex String" name="regex" id="regex" required><br>
+        <p>Enter Text to Search Regex: </p>
+        <textarea name="text" id="text" cols="50" rows="20" inplace>{{text_string_1}}</textarea><br>
+        <button type="submit">Submit</button><br><br>
+        <button type="reset">Reset Inputs</button>
+    </form> 
+    {% for line in output %}
+    <p>{{ line }} </p>
+    {% endfor %}
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Regex Tester</title>
+</head>
+<body>
+    <form action="check_regex\", method="POST">
+        {% csrf_token %}
+        <h1>Live Regex Tester</h1>
+        <hr>
+        <label for="regex">Enter Regex String: </label>
+        <input type="text" placeholder="Enter Regex String" name="regex" id="regex" required><br>
+        <p>Enter Text to Search Regex: </p>
+        <textarea name="text" id="text" cols="70" rows="30""></textarea><br>
+        <label for="check">Ignore Case</label>
+        <input type="checkbox" id="check" name="check" value="1"><br>
+        <button type="submit">Submit</button><br>
+        <button type="reset">Reset Inputs</button><hr>
+    </form> 
+    {% for line in output %}
+    <p>{{ line }} </p>
+    {% endfor %}
+</body>
+</html>
